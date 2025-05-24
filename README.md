@@ -26,8 +26,8 @@ Build a RESTful API using Node.js (with Express) for a basic Book Review system.
 
 Create a `.env` file in the root directory and configure the following:
 
-PORT=3000
-MONGO_URI=yourmongourisetup
+PORT=3000 <br>
+MONGO_URI=yourmongourisetup<br>
 JWT_SECRET=yourSuperSecretKey 
 
 
