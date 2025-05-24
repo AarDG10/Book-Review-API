@@ -8,7 +8,7 @@ exports.addReview = async (req, res) => {
     const bookId = req.params.id;
     const { rating, comment } = req.body;
 
-    // Check if review already exists for this user & book
+    // Check if review already exists for this user & book (1 Review/user)
     const existingReview = await Review.findOne({ user: userId, book: bookId });
     if (existingReview) return res.status(400).json({ message: 'Review already exists' });
 
@@ -28,7 +28,7 @@ exports.addReview = async (req, res) => {
 // PUT /reviews/:id
 exports.updateReview = async (req, res) => {
   try {
-    const userId = req.user._id;
+    const userId = req.user._id;  //picking user id (who wrote the review)
     const reviewId = req.params.id;
     const { rating, comment } = req.body;
 
