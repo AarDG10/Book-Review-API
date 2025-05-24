@@ -8,6 +8,8 @@ const app = express();  //server on
 app.use(express.json()); //parse json data in http req
 
 const authRoutes = require('./routes/authRoutes');  //for mounting the auth routes
+const bookRoutes = require('./routes/bookRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 
 // Health check route
 app.get('/', (req, res) => {
@@ -15,6 +17,11 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authRoutes);
+
+app.use('/books', bookRoutes);
+
+app.use('/reviews', reviewRoutes);
+
 
 // Connect DB & Start Server
 
