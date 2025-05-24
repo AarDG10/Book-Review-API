@@ -141,7 +141,7 @@ example usage: http://localhost:3000/reviews/68315d6ae363c2441f226798
 
 #### `GET /search?query=Atomic` – Search by title/author (any keyword)
 
-- Endpoint: http://localhost:3000/search?query=Atomic
+- Endpoint: http://localhost:3000/books/search?query=Atomic
 
 example usage: http://localhost:3000/books/search?query=Habits
 
