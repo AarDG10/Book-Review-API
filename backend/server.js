@@ -1,16 +1,20 @@
+const dotenv = require('dotenv');  //abstracting sensitive data
+dotenv.config();
+
 const express = require('express'); //server
 const mongoose = require('mongoose');  //connects node.js to MongoDb 
-const dotenv = require('dotenv');  //abstracting sensitive data
-
-dotenv.config();
 
 const app = express();  //server on
 app.use(express.json()); //parse json data in http req
+
+const authRoutes = require('./routes/authRoutes');  //for mounting the auth routes
 
 // Health check route
 app.get('/', (req, res) => {
   res.send('Book Review API is running');
 });
+
+app.use('/auth', authRoutes);
 
 // Connect DB & Start Server
 
