@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 //JWT Gen
 const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: '7d' });
+  return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: '7d' });  //validity of token for 7d
 };
 
 exports.signup = async (req, res) => {
